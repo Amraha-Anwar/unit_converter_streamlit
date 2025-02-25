@@ -7,9 +7,9 @@ if 'conversion_history' not in st.session_state:
     st.session_state.conversion_history = []
 
 # Set page config and theme
-st.set_page_config(page_title="✨ Advanced Unit Converter", layout="wide", page_icon="🔄")
+st.set_page_config(page_title="🌠Advanced Unit Converter", layout="wide", page_icon="🛠")
 
-# Enhanced CSS for interactive gradient background and dark theme
+
 st.markdown("""
     <style>
     /* Interactive gradient background */
@@ -163,8 +163,8 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Title with emoji and subtitle
-st.markdown('<h1 class="title-animation">🔄 Advanced Unit Converter</h1>', unsafe_allow_html=True)
+
+st.markdown('<h1 class="title-animation">🌠 Advanced Unit Converter</h1>', unsafe_allow_html=True)
 st.markdown("_Convert units with style and precision_")
 
 # Conversion factors dictionary
@@ -202,7 +202,7 @@ def convert_temperature(value, from_unit, to_unit):
     }
     return conversions[from_unit][to_unit](value)
 
-# Create main layout
+# main layout
 col1, col2 = st.columns([2, 1])
 
 with col1:
@@ -309,7 +309,7 @@ with col2:
         )
         st.plotly_chart(fig, use_container_width=True)
 
-# Add footer with additional features
+
 st.markdown("---")
 with st.expander("ℹ️ Help & Tips"):
     st.markdown("""
@@ -321,7 +321,7 @@ with st.expander("ℹ️ Help & Tips"):
     - For temperature conversions, negative values are allowed
     """)
 
-# Add a download button for conversion history
+
 if st.session_state.conversion_history:
     import pandas as pd
     history_df = pd.DataFrame(st.session_state.conversion_history)
@@ -335,5 +335,4 @@ if st.session_state.conversion_history:
     )
     st.markdown('</div>', unsafe_allow_html=True)
 
-# Personalized touch
 st.markdown('<div class="personalized-touch">Made with ❤️ by Amraha Anwar</div>', unsafe_allow_html=True)
